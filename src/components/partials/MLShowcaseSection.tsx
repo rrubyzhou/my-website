@@ -24,8 +24,9 @@ const mlItems = [
 ];
 
 const mlBgClasses = [
-  'bg-pink-100 text-pink-700',
-  'bg-yellow-100 text-yellow-700',
+  'bg-pink-400 text-white',
+  'bg-yellow-300 text-yellow-900',
+  'bg-purple-400 text-white',
 ];
 
 const MLShowcaseSection = () => (

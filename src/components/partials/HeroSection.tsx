@@ -56,7 +56,7 @@ const HeroSection = () => {
             </Link>
           </div>
           <button className="mt-8 flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 px-8 py-3 text-white shadow-lg transition-all hover:scale-105 hover:from-pink-500 hover:to-purple-500 focus:ring-2 focus:ring-pink-200 dark:from-pink-500 dark:to-purple-500 dark:hover:from-pink-600 dark:hover:to-purple-600">
-            Download CV
+            Download Resume
           </button>
         </div>
         {/* Right side - About */}

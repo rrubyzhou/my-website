@@ -2,11 +2,11 @@ import React from 'react';
 
 const experiences = [
   {
-    company: 'Omdema',
+    company: 'Omdena',
     jobTitle: 'Junior Machine Learning Engineer',
     startDate: '06/2023',
     endDate: '08/2023',
-    logo: '/images/omdema-logo.png',
+    logo: '/images/omdena-logo.jpg',
   },
   {
     company: 'Envision Robotics',
@@ -32,8 +32,8 @@ const ExperienceSection = () => (
           className={`flex items-center rounded-2xl shadow-lg p-8 transition-transform hover:-translate-y-2 hover:scale-105 ${bgClasses[idx % bgClasses.length]}`}
         >
           {exp.logo && (
-            <div className="flex-shrink-0 h-20 w-20 bg-white/40 flex items-center justify-center mr-6 rounded-xl">
-              <img src={exp.logo} alt={exp.company} className="h-12 w-12 object-contain" />
+            <div className="flex-shrink-0 h-24 w-24 bg-white/40 flex items-center justify-center mr-6 rounded-xl">
+              <img src={exp.logo} alt={exp.company} className="h-16 w-16 object-contain" />
             </div>
           )}
           <div>

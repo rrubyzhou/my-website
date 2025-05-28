@@ -16,7 +16,7 @@ const AboutSection = () => {
             Hi, I am Md Mostafizur Rahman, I am a fullstack developer. I work from Dhaka, Bangladesh. I have rich
             experience in building, designing & customizing website, web apps, mobile apps etc.
           </p>
-          <Button className="mt-5">Download CV</Button>
+          <Button className="mt-5">Download Resume</Button>
         </div>
 
         {/* Skills */}
