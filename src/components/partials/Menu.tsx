@@ -12,7 +12,7 @@ const Menu = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
-  const handleSmoothScroll = (e, id) => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const target = document.getElementById(id);
     if (!target) return;
