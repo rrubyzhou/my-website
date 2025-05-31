@@ -88,3 +88,7 @@ body {
 .animate-cute-pop {
   animation: cute-pop 1.1s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1;
 }
+
+html {
+  scroll-behavior: smooth;
+}

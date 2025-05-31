@@ -11,6 +11,14 @@ const Menu = () => {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+
+  const handleSmoothScroll = (e, id) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <header className="header text-gray-700 dark:text-gray-200">
       <div className="mx-auto flex h-16 max-w-7xl items-center px-4 md:px-6">
@@ -23,16 +31,40 @@ const Menu = () => {
         <nav className="w-full flex justify-end items-center py-6 px-10">
           <ul className="flex gap-8 text-lg font-bold text-pink-600">
             <li>
-              <Link href="#about"><a className="hover:text-pink-400">About Me</a></Link>
+              <a
+                href="#about"
+                className="hover:text-pink-400 cursor-pointer"
+                onClick={e => handleSmoothScroll(e, 'about')}
+              >
+                About Me
+              </a>
             </li>
             <li>
-              <Link href="#experiences"><a className="hover:text-pink-400">Experiences</a></Link>
+              <a
+                href="#experiences"
+                className="hover:text-pink-400 cursor-pointer"
+                onClick={e => handleSmoothScroll(e, 'experiences')}
+              >
+                Experiences
+              </a>
             </li>
             <li>
-              <Link href="#projects"><a className="hover:text-pink-400">Projects</a></Link>
+              <a
+                href="#projects"
+                className="hover:text-pink-400 cursor-pointer"
+                onClick={e => handleSmoothScroll(e, 'projects')}
+              >
+                Projects
+              </a>
             </li>
             <li>
-              <Link href="#contact"><a className="hover:text-pink-400">Contact</a></Link>
+              <a
+                href="#contact"
+                className="hover:text-pink-400 cursor-pointer"
+                onClick={e => handleSmoothScroll(e, 'contact')}
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </nav>
@@ -41,7 +73,7 @@ const Menu = () => {
           className="ml-auto transition-colors duration-150 hover:text-primary-500 md:-mt-0.5 md:ml-3"
           onClick={() => toggleTheme()}
         >
-          {theme === Theme.LIGHT ? <BsMoonStars size={20} /> : <BsSun size={20} />}
+          {theme === Theme.LIGHT ? <BsMoonStars size={20} style={{ color: '#ff4c60' }} /> : <BsSun size={20} />}
         </button>
         <button
           type="button"
