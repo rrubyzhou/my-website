@@ -12,37 +12,69 @@ const bgClasses = [
   'bg-teal-400 text-white',
 ];
 
-const projects = [
-  {
-    title: 'ReWear',
-    previewUrl: 'https://devpost.com/software/rewear-ahofe3',
-    image: '/images/rewear-screenshot.png',
-  },
+type Project = {
+  title: string;
+  image?: string;
+  previewUrl: string;
+  tags?: string[];
+  tech?: string;
+  date?: string;
+  description?: string | string[];
+};
+
+const projects: Project[] = [
   {
     title: 'Chronicle',
-    previewUrl: 'https://dorahacks.io/buidl/21701/',
     image: '/images/chronicle-screenshot.png',
+    previewUrl: 'https://dorahacks.io/buidl/21701/',
+    tags: ['Web', 'Productivity'],
+    description: 'Built an end-to-end NLP pipeline that analyzes story text using NER, sentiment scoring, and chunking, with a React frontend and Python backend communicating via a ROS-inspired publish-subscribe model.',
+  },
+  {
+    title: 'Customer Churn Prediction',
+    image: '/images/churr-corr-heatmap.png',
+    previewUrl: 'https://github.com/rrubyzhou/customer-churn-prediction',
+    tags: ['Machine Learning'],
+    tech: 'Python, XGBoost, SQL, Jupyter, matplotlib',
+    date: 'Apr. 2025',
+    description: 'Developed a customer churn prediction model using supervised learning, feature engineering, XGBoost, and SMOTE to improve classification accuracy on imbalanced telecom datasets.',
+  },
+  {
+    title: 'Credit Card Fraud Detection',
+    image: '/images/creditcard.png',
+    previewUrl: 'https://github.com/rrubyzhou/credit-card-fraud-detection',
+    tags: ['Machine Learning'],
+    tech: 'Python, Scikit-learn, Pandas',
+    date: 'May 2025',
+    description: 'Built a credit card fraud detection model using logistic regression, feature scaling, and undersampling techniques to classify rare fraudulent transactions in an imbalanced dataset of 285K+ entries.',
+  },
+  {
+    title: 'MERN FullStack Social Media App',
+    image: '/images/socialmedia.png',
+    previewUrl: 'https://github.com/rrubyzhou/social-media-clone-mern',
+    tags: ['Web', 'FullStack'],
+    description: 'Built a fullstack social media platform from scratch with features like user authentication, post creation, likes, and profile pages.',
+  },
+  {
+    title: 'Movie Recommendation System',
+    image: '/images/movie.png',
+    previewUrl: 'https://github.com/rrubyzhou/movie-recommender-machine-learning',
+    tags: ['Machine Learning', 'NLP'],
+    description: 'A content-based movie recommender system built with Python and Streamlit, using TF-IDF and cosine similarity to deliver real-time recommendations across 10K+ films.',
+  },
+  {
+    title: 'ReWear',
+    image: '/images/rewear-screenshot.png',
+    previewUrl: 'https://devpost.com/software/rewear-ahofe3',
+    tags: ['Web', 'Sustainability'],
+    description: 'A Chrome extension that matches user-uploaded clothing images to similar secondhand items using visual similarity and tracks environmental impact to promote sustainable shopping.',
   },
   {
     title: 'Forkify Recipe App',
-    previewUrl: 'https://github.com/rrubyzhou/forkify-recipe-app',
     image: '/images/forkify-screenshot.png',
-  },
-  // Add three more placeholder projects
-  {
-    title: 'Project Placeholder 1',
-    previewUrl: '#',
-    image: '',
-  },
-  {
-    title: 'Project Placeholder 2',
-    previewUrl: '#',
-    image: '',
-  },
-  {
-    title: 'Project Placeholder 3',
-    previewUrl: '#',
-    image: '',
+    previewUrl: 'https://github.com/rrubyzhou/forkify-recipe-app',
+    tags: ['Web', 'Food'],
+    description: 'Built a responsive recipe web app with search, bookmarking, and recipe upload functionality by integrating the Forkify REST API.',
   },
 ];
 
@@ -69,11 +101,32 @@ const ProjectsPage = () => {
                       className="h-full w-full object-contain rounded-t-2xl"
                     />
                   ) : (
-                    <span className="text-2xl opacity-60">Website Preview</span>
+                    <span className="text-2xl opacity-60">No Image</span>
                   )}
                 </div>
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{project.title}</h3>
+                  {project.tags && (
+                    <div className="flex flex-wrap justify-center gap-2 mt-2">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="inline-block bg-white/30 text-xs font-semibold px-2 py-1 rounded-full border border-white/50">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  {project.tech && (
+                    <div className="mt-2 text-xs opacity-80">{project.tech} <span className="float-right">{project.date}</span></div>
+                  )}
+                  {project.description && (
+                    Array.isArray(project.description) ? (
+                      <ul className="list-disc ml-5 mt-2 text-left text-sm">
+                        {project.description.map((desc, i) => (
+                          <li key={i}>{desc}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-2 text-left text-sm">{project.description}</p>
+                    )
+                  )}
                 </div>
               </a>
             ))}

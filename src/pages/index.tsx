@@ -4,7 +4,7 @@ import SiteBackground from '@/components/partials/SiteBackground';
 import HeroSection from '@/components/partials/HeroSection';
 import ExperienceSection from '@/components/partials/ExperienceSection';
 import ProjectsSection from '@/components/partials/ProjectsSection';
-import MLShowcaseSection from '@/components/partials/MLShowcaseSection';
+// import MLShowcaseSection from '@/components/partials/MLShowcaseSection';
 import ContactSection from '@/components/partials/ContactSection';
 import Footer from '@/components/partials/Footer';
 import AppLayout from '@/layouts/AppLayout';
@@ -29,7 +29,7 @@ const Home = () => (
     <section id="projects">
       <SiteBackground />
       <ProjectsSection />
-      <MLShowcaseSection />
+      {/* <MLShowcaseSection /> */}
     </section>
     <section id="contact">
       <SiteBackground />
